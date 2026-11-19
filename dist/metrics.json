@@ -1,0 +1,60 @@
+{
+  "data_source": "synthetic",
+  "records": 3000,
+  "train_records": 2400,
+  "test_records": 600,
+  "prevalence": 0.39666666666666667,
+  "seed": 42,
+  "threshold": 0.5,
+  "cv_ap": 0.8267857740093776,
+  "best_params": {
+    "classifier__learning_rate": 0.04,
+    "classifier__max_depth": 2,
+    "classifier__n_estimators": 120
+  },
+  "models": [
+    {
+      "model": "Logistic Regression",
+      "AP": 0.8640483791067849,
+      "ROC_AUC": 0.8909304053112956,
+      "F1": 0.7428571428571429,
+      "accuracy": 0.805,
+      "Brier": 0.12851831341145656
+    },
+    {
+      "model": "Random Forest",
+      "AP": 0.85446216990514,
+      "ROC_AUC": 0.8863631087794234,
+      "F1": 0.7554585152838428,
+      "accuracy": 0.8133333333333334,
+      "Brier": 0.13148401965840498
+    },
+    {
+      "model": "Default Gradient Boosting",
+      "AP": 0.8520027183334404,
+      "ROC_AUC": 0.8817842053948651,
+      "F1": 0.754880694143167,
+      "accuracy": 0.8116666666666666,
+      "Brier": 0.1327870044963797
+    },
+    {
+      "model": "Tuned Gradient Boosting",
+      "AP": 0.8517179121200686,
+      "ROC_AUC": 0.8831712242908213,
+      "F1": 0.7473002159827213,
+      "accuracy": 0.805,
+      "Brier": 0.13249128396275733
+    }
+  ],
+  "confusion_matrix": [
+    [
+      310,
+      52
+    ],
+    [
+      65,
+      173
+    ]
+  ],
+  "sklearn_version": "1.8.0"
+}
