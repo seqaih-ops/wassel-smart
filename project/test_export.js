@@ -1,0 +1,3 @@
+const fs=require('fs');const assert=require('assert');const {predict}=require('../dist/inference.js');
+const model=JSON.parse(fs.readFileSync(__dirname+'/outputs/model.json'));const fixture=JSON.parse(fs.readFileSync(__dirname+'/outputs/parity_fixtures.json'));
+let max=0;fixture.inputs.forEach((x,i)=>{max=Math.max(max,Math.abs(predict(model,x)-fixture.probabilities[i]))});assert(max<1e-7);for(const x of [{Distance_Km:0,Driver_Orders:2,Traffic_Level:1},{Distance_Km:3,Driver_Orders:1.5,Traffic_Level:1},{Distance_Km:3,Driver_Orders:2,Traffic_Level:4}])assert.throws(()=>predict(model,x));console.log('200 Python/JS predictions matched; max error:',max,'; invalid inputs rejected.');
